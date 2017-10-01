@@ -1,6 +1,6 @@
 <template>
   <div class="counter">
-    Hey counter here
+    <!-- Hey counter here {{componentVal}} -->
   </div>
 </template>
 
@@ -12,14 +12,25 @@ import optionsMixin from "../mixins/optionsMixin"
 console.log("options", optionsMixin)
 export default {
   name: 'counter',
+  props: ["totalCount"],
   mixins: [optionsMixin],
   data () {
     return {
+      currentCount: null,
+      date: null
+// need to maybe track date? how to ensure it ticks
     }
   },
   mounted() {
+    // Keep counter updated
+    // let newDate = new Date();
+    // let difference = newDate.day - this.date.day;
+    // if (difference > 0) {
+    //   this.currentCount += difference;
+    // }
+    // this.saveToLocal();
     // optionsMixin.mounted();
-    console.log('in counter', this.componentVal)
+    // console.log('in counter', this.componentValues)
   }
 }
 </script>
