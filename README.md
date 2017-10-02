@@ -1,6 +1,6 @@
 # knowday
 
-> A Vue.js project
+A configurable startup page that is purely front end. Nothing to track you, everything is stored in your browser's localStorage. Built in Vue. You can use and share your settings by exporting and importing json files.
 
 ## Build Setup
 
@@ -23,5 +23,3 @@ npm run unit
 # run all tests
 npm test
 ```
-
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
