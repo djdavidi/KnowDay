@@ -1,13 +1,14 @@
 <template>
   <div class="list-feed">
     <div class="list-item" v-for="item in items">
-      <div class="list-item-name" :style="{background: nameColor}"> {{name}} </div>
-      <div class="list-item-color-tab" :style="{background: textColor}">{{text}}</div>
+      <div class="list-item-top"> <a target="_blank" :href="item.permalink">{{item.title}} </a></div>
+      <!-- <div class="list-item-bottom">{{item.permalink}}</div> -->
     </div>
   </div>
 </template>
 
 <script>
+import axios from "axios"
 export default {
   name: 'listfeed',
   props: ["link"],
@@ -15,55 +16,66 @@ export default {
   // the selecting of the desired object property
   data () {
     return {
-      items: ["one", "two"],
+      items: []
 
     }
   },
-  methods() {
-        // axios.get("https://www.reddit.com/r/webdev/top/.json?count=20")
-    // .then((res) => {
-    //   console.log("here",res)
-    // })
+  mounted() {
+  axios.get("https://www.reddit.com/r/webdev/hot/.json?count=20")
+    .then((res) => {
+      console.log("here",res.data.data.children)
+      var thing = res.data.data.children.map((post) => {
+        console.log("post", post.data.title)
+        return {
+          permalink: `https://reddit.com/${post.data.permalink}`,
+          title: post.data.title
+        }
+      });
+    this.items = thing
+    console.log("item", this.items)
+    })
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-body {
-  background-color: #d3d3d3;
-  margin: 0;
-  width: 100vw;
-  height: 100vh;
-}
-
-.thing {
+.list-feed {
+  max-height: 300px;
+  overflow: auto;
+  width: 85%;
+  margin-left: 5%;
+  margin-right: 5%;
   height: 100%;
-  width: 100%;
-}
-
-.list-container {
-  width: 50%;
-  height: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  max-height: 300px;
+  overflow: auto;
 }
 .list-item {
-  min-width: 200px;
+  min-width: 250px;
   cursor: pointer;
-  min-height: 1em;
-  margin-top: 3px;
-  margin-bottom: 3px;
+  min-height: 2em;
+  margin-top: 10px;
+  margin-bottom: 10px;
   background-color: rgba( 211, 211, 211, 0.5);
-  width: 50%;
+  width: 100%;
+
   display: flex;
+  flex-direction: column;
 }
 .list-item:hover {
-  transform: scale(1.1,1.1);
+  /*transform: scale(1.1,1.1);*/
 }
-
+.list-item a {
+  max-height: 30px;
+  max-width: 200px;
+  display: block;
+  text-overflow: ellipsis;
+}
+/*
 .list-item-color-tab {
   width: 60%;
   padding-right: 5%;
@@ -77,5 +89,5 @@ body {
   width: 20%;
   padding-left: 5%;
   background-color: lightblue;
-}
+}*/
 </style>

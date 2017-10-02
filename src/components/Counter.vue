@@ -22,6 +22,13 @@ export default {
     }
   },
   mounted() {
+    // If at this point the mixin has not set the property keys on our
+    // data object, then we know that this is new
+    if (!this.currentCount) {
+      
+    }
+
+
     // Keep counter updated
     // let newDate = new Date();
     // let difference = newDate.day - this.date.day;

@@ -7,6 +7,11 @@
 <script>
 // let choose theme color, widgets, etc
 // cant creat two with same name
+// This guy here is going to be the control center
+// need to parse and save the current widgets so that I know to render them
+//  and with what names
+// so {type: "counter", name: "inktober"} so i can pass it the widget name
+// so it can access local storage
 export default {
   name: 'listfeed',
   data () {
