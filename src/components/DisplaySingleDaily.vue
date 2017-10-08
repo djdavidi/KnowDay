@@ -1,5 +1,5 @@
 e<template>
-  <div class="display-daily">
+<div class="display-daily">
 
   </div>
 </template>
