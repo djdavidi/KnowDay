@@ -62,7 +62,7 @@ export default {
   margin-bottom: 10px;
   background-color: rgba( 211, 211, 211, 0.5);
   width: 100%;
-
+  overflow: auto;
   display: flex;
   flex-direction: column;
 }
@@ -71,7 +71,7 @@ export default {
 }
 .list-item a {
   max-height: 30px;
-  max-width: 200px;
+  /*max-width: 200px;*/
   display: block;
   text-overflow: ellipsis;
 }

@@ -13,7 +13,7 @@
 // so {type: "counter", name: "inktober"} so i can pass it the widget name
 // so it can access local storage
 export default {
-  name: 'listfeed',
+  name: 'SettingsModal',
   data () {
     return {
       
