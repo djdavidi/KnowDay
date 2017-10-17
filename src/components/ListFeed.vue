@@ -70,9 +70,10 @@ export default {
   /*transform: scale(1.1,1.1);*/
 }
 .list-item a {
-  max-height: 30px;
-  /*max-width: 200px;*/
-  display: block;
+  display: inline-block;
+  white-space: nowrap;
+  width: 100%; 
+  overflow: hidden;
   text-overflow: ellipsis;
 }
 /*
