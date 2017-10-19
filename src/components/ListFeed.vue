@@ -1,9 +1,11 @@
 <template>
-  <div class="list-feed">
-    <div class="list-item" v-for="item in items">
-      <div class="list-item-top"> <a target="_blank" :href="item.permalink">{{item.title}} </a></div>
-      <!-- <div class="list-item-bottom">{{item.permalink}}</div> -->
-    </div>
+  <div class="list-feed-container">
+    <div clas="header"> Reddit </div>
+    <ul class="list-feed">
+      <li class="list-item" v-for="item in items">
+        <div class="list-item-top"> <a target="_blank" :href="item.permalink">{{item.title}} </a></div>
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -38,33 +40,38 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.list-feed-container {
+  /*background: #eee;*/
+}
 .list-feed {
-  max-height: 300px;
+  border: 1px solid #d3d3d3;
+  border-radius: 2%;
+  /*max-height: 300px;*/
   overflow: auto;
   width: 85%;
   margin-left: 5%;
   margin-right: 5%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  max-height: 300px;
+  height: 300px;
+  /*display: flex;*/
+  /*flex-direction: column;*/
+  /*align-items: center;*/
+  /*justify-content: center;*/
   overflow: auto;
 }
-.list-item {
+.list-item, .header {
   min-width: 250px;
   cursor: pointer;
-  min-height: 2em;
-  margin-top: 10px;
+  min-height: 20px;
   margin-bottom: 10px;
   background-color: rgba( 211, 211, 211, 0.5);
   width: 100%;
   overflow: auto;
-  display: flex;
-  flex-direction: column;
+  padding-top: 2.5px;
+  padding-bottom: 2.5px;
+/*  display: flex;
+  flex-direction: column;*/
+
 }
 .list-item:hover {
   /*transform: scale(1.1,1.1);*/

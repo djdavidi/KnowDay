@@ -8,6 +8,7 @@
   <div class="reddit">
     <list-feed></list-feed>
   </div>
+  <stats></stats>
   <counter widget-name="inktober"></counter>
  <!--  <div class="wordnik">
     http://developer.wordnik.com/docs.html#!/words/getWordOfTheDay_get_1
@@ -16,8 +17,9 @@
 </template>
 
 <script>
-import ListFeed from './components/ListFeed'
+import ListFeed from "./components/ListFeed"
 import Counter from "./components/Counter"
+import Stats from "./components/Stats"
 import axios from "axios"
 export default {
   name: "app",
@@ -48,7 +50,8 @@ export default {
   },
   components: {
     ListFeed,
-    Counter
+    Counter,
+    Stats
   }
 }
 </script>
