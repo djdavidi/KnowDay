@@ -1,7 +1,24 @@
 <template>
   <div class="stats-container">
-    <div v-for="crypto in cryptos">
-      {{crypto}}
+    <div v-for="crypto in cryptos" class="stats">
+        <a>{{crypto.name}}</a>
+        <div>
+          <span>Price in USD:</span>
+          <div>{{crypto.price_usd }}</div>
+        </div>
+
+        <div>
+          <span>Price in BTC:</span>
+          <div>{{crypto.price_btc}}</div>
+        </div>
+        <div>
+          <span>Change in 24h:</span>
+          <div> {{crypto.percent_change_24h}}</div>%
+        </div>
+        <div>
+          <span>Change in 7 days:</span>
+          <div>{{crypto.percent_change_7d}}</div>%
+        </div>
     </div>
   </div>
 </template>
@@ -56,6 +73,14 @@ export default {
 }
 </script>
 
-<style scoped>
-
+<style>
+.stats-container {
+  color: green;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.stats {
+  width: 25%;
+}
 <style>
