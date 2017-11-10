@@ -43,6 +43,10 @@ export default {
 <style scoped>
 .list-feed-container {
   background: #eee;
+  box-shadow: 1px 1px 1px;
+  border-radius: 2%;
+  margin-left: 2%;
+  margin-right: 2%;
 }
 .header {
   margin-bottom: 50px;
@@ -54,8 +58,7 @@ export default {
   /*max-height: 300px;*/
   overflow: auto;
   /*width: 85%;*/
-  margin-left: 2%;
-  margin-right: 2%;
+  
   height: 300px;
   /*display: flex;*/
   /*flex-direction: column;*/

@@ -11,7 +11,7 @@
 import optionsMixin from "../mixins/optionsMixin"
 console.log("options", optionsMixin)
 export default {
-  name: 'counter',
+  name: 'progressTracker',
   props: ["totalCount"],
   mixins: [optionsMixin],
   data () {

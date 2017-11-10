@@ -1,15 +1,27 @@
 <template>
-  <div class="list-feed">
-
+  <div class="toDo">
+    <div v-for="(todo, index) in toDos">
+      {{todo}} <span @click="removeTodo(index)">remove</span>
+    </div>
+    <div><input type="text" v-model="newToDo"></div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'listfeed',
+  name: 'toDo',
   data () {
     return {
-      
+      toDos: ["one", "two", "three"],
+      newToDo: ""
+    }
+  },
+  methods: {
+    removeTodo(index) {
+      this.toDos.splice(index, 1)
+    },
+    addTodo() {
+      this.toDos.push(this.newToDo)
     }
   }
 }

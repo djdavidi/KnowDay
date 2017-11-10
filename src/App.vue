@@ -4,12 +4,12 @@
   <span @click="updateNotes">{{hello}}</span>
   <input type="text" class="notes" v-model="notes" @change="updateNotes" />
   
-  
+  <to-do></to-do>
   <div class="reddit">
     <list-feed></list-feed>
   </div>
-  <stats></stats>
-  <counter widget-name="inktober"></counter>
+  <!-- <stats></stats> -->
+  <!-- <counter :widget-name="inktober"></counter> -->
  <!--  <div class="wordnik">
     http://developer.wordnik.com/docs.html#!/words/getWordOfTheDay_get_1
   </div> -->
@@ -18,8 +18,10 @@
 
 <script>
 import ListFeed from "./components/ListFeed"
-import Counter from "./components/Counter"
-import Stats from "./components/Stats"
+import ProgressTracker from "./components/ProgressTracker"
+// import Stats from "./components/Stats"
+import ToDo from "./components/ToDo"
+import SettingsModal from "./components/controls/SettingsModal"
 import axios from "axios"
 export default {
   name: "app",
@@ -50,8 +52,9 @@ export default {
   },
   components: {
     ListFeed,
-    Counter,
-    Stats
+    ProgressTracker,
+    ToDo,
+    SettingsModal
   }
 }
 </script>
