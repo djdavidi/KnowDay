@@ -1,6 +1,6 @@
 <template>
   <div class="list-feed-container">
-    <div clas="header"> Reddit </div>
+    <div class="header"> Reddit </div>
     <ul class="list-feed">
       <li class="list-item" v-for="item in items">
         <div class="list-item-top"> <a target="_blank" :href="item.permalink">{{item.title}} </a></div>
@@ -42,16 +42,20 @@ export default {
 
 <style scoped>
 .list-feed-container {
-  /*background: #eee;*/
+  background: #eee;
+}
+.header {
+  margin-bottom: 50px;
+  font-size: 20px;
 }
 .list-feed {
-  border: 1px solid #d3d3d3;
-  border-radius: 2%;
+  /*border: 1px solid #d3d3d3;*/
+  /*border-radius: 2%;*/
   /*max-height: 300px;*/
   overflow: auto;
-  width: 85%;
-  margin-left: 5%;
-  margin-right: 5%;
+  /*width: 85%;*/
+  margin-left: 2%;
+  margin-right: 2%;
   height: 300px;
   /*display: flex;*/
   /*flex-direction: column;*/
@@ -82,6 +86,8 @@ export default {
   width: 100%; 
   overflow: hidden;
   text-overflow: ellipsis;
+  text-decoration: none;
+  line-height: normal;
 }
 /*
 .list-item-color-tab {
