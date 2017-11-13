@@ -16,7 +16,7 @@ export default {
   name: 'Settings',
   data () {
     return {
-      
+      components: ["ToDo", "ListFeed", "ProgressTracker"]
     }
   },
   created() {

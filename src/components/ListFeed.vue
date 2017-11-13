@@ -51,6 +51,7 @@ export default {
 .header {
   margin-bottom: 50px;
   font-size: 20px;
+  cursor: ;
 }
 .list-feed {
   /*border: 1px solid #d3d3d3;*/

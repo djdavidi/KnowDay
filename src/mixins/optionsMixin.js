@@ -5,6 +5,8 @@ export default {
       isOpen: true
     }
   },
+  // Have an error mixin as well, detects if error and sets error value
+  // and message
   created() {
     // Probably have to move this to store
     // That way only iterate this once
