@@ -19,9 +19,9 @@ const store = new Vuex.Store({
     DEACTIVATE_COMPONENT: (state, {commit}) => {
         commit("DEACTIVATE_COMPONENT", { name})
     },
-    SET_COMPONENT_VALUE: (state, {commit} => {
+    SET_COMPONENT_VALUE: (state, {commit}) => {
       commit("SET_COMPONENT_VALUE", {name, value})
-    })
+    }
   },
   mutations: {
     SET_ACTIVE_COMPONENTS: (state, { componentsList }) => {
