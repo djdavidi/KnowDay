@@ -31,7 +31,7 @@ export default {
       notes: null
     }
   },
-  mounted() {
+  created() {
     this.notes = localStorage.getItem("notes")
     console.log("axios", axios)
     // axios.get("https://www.reddit.com/r/webdev/top/.json?count=20")

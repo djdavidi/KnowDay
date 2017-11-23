@@ -10,6 +10,8 @@ export default {
   created() {
     // Probably have to move this to store
     // That way only iterate this once
+    // No still need this. That way store tracks component existence,
+    // and each one tracks it's own value
     console.log("this.name", this.widgetName)
     let storageValues = JSON.parse(localStorage.getItem(this.widgetName));
     for (var key in storageValues) {
