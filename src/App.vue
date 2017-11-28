@@ -1,13 +1,13 @@
 <template>
 <div id="app">
-  <input type="text" @change="updateNotes" v-model="notes">
-  <span @click="updateNotes">{{hello}}</span>
+  <button @click="toggleSettingsModal">Settings</button>
   <input type="text" class="notes" v-model="notes" @change="updateNotes" />
   
   <to-do></to-do>
   <div class="reddit">
     <list-feed></list-feed>
   </div>
+  <settings-modal :isOpen="isSettingsOpen"></settings-modal>
   <!-- <stats></stats> -->
   <!-- <counter :widget-name="inktober"></counter> -->
  <!--  <div class="wordnik">
@@ -25,10 +25,11 @@ import SettingsModal from "./components/controls/SettingsModal"
 import axios from "axios"
 export default {
   name: "app",
-  data (){
+  data () {
       return {
       hello:"thing",
-      notes: null
+      notes: null,
+      isSettingsOpen
     }
   },
   created() {
@@ -39,15 +40,20 @@ export default {
     //   console.log("here",res)
     // })
   },
-  watch: {
-    notes:function() {
-      console.log("yo", this.notes)
-    }
-  },
+  // the @change will only fire on click out? what ahppens
+  // if they dont? acceptable?
+  // watch: {
+  //   notes:function() {
+  //     console.log("yo", this.notes)
+  //   }
+  // },
   methods: {
-    updateNotes(){
+    updateNotes() {
       localStorage.setItem("notes", this.notes)
       console.log("here")
+    },
+    toggleSettingsModal() {
+      this.isSettingsOpen = !this.isSettingsOpen
     }
   },
   components: {
@@ -60,31 +66,35 @@ export default {
 </script>
 
 <style>
+body {
+  background-color: #FAFAFA;
+}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  height: calc(100% - 6em);
-  margin-top: 6em;
+  height: calc(100vh - 60px);
+  margin-top: 60px;
   width: 100vw;
   /*margin-top: 60px;*/
 }
-body {
+/*body {
   height: calc(100% - 60px);
   margin-top: 60px;
   width: 100vw;
-}
+}*/
 
 .notes {
-  background: #d3d3d3;
-  height: 50px;
-  width:50px;
+  background: #D3D3D3;
+  height: 150px;
+  width: 150px;
 }
 
 .reddit {
   width: 25%;
+  margin-left: 10%;
 }
 
 

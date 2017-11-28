@@ -42,47 +42,43 @@ export default {
 
 <style scoped>
 .list-feed-container {
-  background: #eee;
-  box-shadow: 1px 1px 1px;
-  border-radius: 2%;
-  margin-left: 2%;
-  margin-right: 2%;
+  box-shadow: 1px 1px 1px 1px;
+  /*border-radius: 5%;*/
+/*  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;*/
 }
-.header {
-  margin-bottom: 50px;
+.list-feed-container .header {
+ /* border-top-left-radius: 5px;
+  border-top-right-radius: 5px;*/
   font-size: 20px;
-  cursor: ;
+  cursor: default;
+  border-bottom: none;
+  background-color: var(--main-color, #28B7E5);;
 }
 .list-feed {
-  /*border: 1px solid #d3d3d3;*/
-  /*border-radius: 2%;*/
-  /*max-height: 300px;*/
   overflow: auto;
-  /*width: 85%;*/
-  
   height: 300px;
-  /*display: flex;*/
-  /*flex-direction: column;*/
-  /*align-items: center;*/
-  /*justify-content: center;*/
   overflow: auto;
 }
 .list-item, .header {
-  min-width: 250px;
   cursor: pointer;
-  min-height: 20px;
-  margin-bottom: 10px;
-  background-color: rgba( 211, 211, 211, 0.5);
-  width: 100%;
+  min-height: 40px;
+  width: calc(100% - 10px);
+  padding-left: 5px;
+  padding-right: 5px;
   overflow: auto;
-  padding-top: 2.5px;
-  padding-bottom: 2.5px;
-/*  display: flex;
-  flex-direction: column;*/
+  padding-top: 3px;
+  padding-bottom: 3px;
+  line-height: normal;
+  border-bottom: 1px solid #CECECE;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
 }
 .list-item:hover {
-  /*transform: scale(1.1,1.1);*/
+  transform: scale(1, 1.1);
+  background: #d3d3d3;
 }
 .list-item a {
   display: inline-block;
@@ -91,21 +87,9 @@ export default {
   overflow: hidden;
   text-overflow: ellipsis;
   text-decoration: none;
-  line-height: normal;
-}
-/*
-.list-item-color-tab {
-  width: 60%;
-  padding-right: 5%;
-  height: 100%;
-  text-align: right;
-  background-color: hsl(180, 100%, 50%);
 }
 
-.list-item-name {
-  height: 100%;
-  width: 20%;
-  padding-left: 5%;
-  background-color: lightblue;
-}*/
+.list-item-top {
+  display: flex;
+}
 </style>

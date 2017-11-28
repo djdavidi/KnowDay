@@ -1,9 +1,9 @@
 <template>
   <div class="toDo">
+    <div><input type="text" v-model="newToDo" @keypress="addToDo">plus button</div>
     <div v-for="(todo, index) in toDos">
-      {{todo}} <span @click="removeTodo(index)">remove</span>
+      {{todo}} <span @click="removeToDo(index)">remove</span>
     </div>
-    <div><input type="text" v-model="newToDo"></div>
   </div>
 </template>
 
@@ -17,11 +17,11 @@ export default {
     }
   },
   methods: {
-    removeTodo(index) {
+    removeToDo(index) {
       this.toDos.splice(index, 1)
     },
-    addTodo() {
-      this.toDos.push(this.newToDo)
+    addToDo(e) {
+      e.charCode === 13? this.toDos.push(this.newToDo) : ""
     }
   }
 }
